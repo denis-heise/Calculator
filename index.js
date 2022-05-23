@@ -123,25 +123,25 @@ function calculate (expression){
         }
         return result;
     } else if (romanNumerals.test(newExpression[0]) && romanNumerals.test(newExpression[2])) {
-        let separatedfirstNumberber = newExpression[0].split('');
-        let separatedsecondNumberber = newExpression[2].split('');;
+        let separatedFirstNumberber = newExpression[0].split('');
+        let separatedSecondNumberber = newExpression[2].split('');;
 
-        for(let i = 0; i < separatedfirstNumberber.length; i++){
-            numberConvertedFirst = numberConvertedFirst + numberRoman[separatedfirstNumberber[i]];
+        for(const element of separatedFirstNumberber){
+            numberConvertedFirst = numberConvertedFirst + numberRoman[element];
         }
-        for(let i = 0; i < separatedsecondNumberber.length; i++){
-            numberConvertedSecond = numberConvertedSecond + numberRoman[separatedsecondNumberber[i]];
+        for(const element of separatedSecondNumberber){
+            numberConvertedSecond = numberConvertedSecond + numberRoman[element];
         }
 
-        if(separatedfirstNumberber[1] === 'V'){
+        if(separatedFirstNumberber[1] === 'V'){
             numberConvertedFirst = numberConvertedFirst - 2;
-        } else if(separatedfirstNumberber[1] === 'X'){
+        } else if(separatedFirstNumberber[1] === 'X'){
             numberConvertedFirst = numberConvertedFirst - 2;
         }
 
-        if(separatedsecondNumberber[1] === 'V'){
+        if(separatedSecondNumberber[1] === 'V'){
             numberConvertedSecond = numberConvertedSecond - 2;
-        } else if(separatedsecondNumberber[1] === 'X'){
+        } else if(separatedSecondNumberber[1] === 'X'){
             numberConvertedSecond = numberConvertedSecond - 2;
         }
 
@@ -200,4 +200,4 @@ buttonResult.addEventListener('click', function(){
 buttonReset.addEventListener('click', function(){
     input.value = '';
     resultsBlock.textContent = '';
-})
+});
